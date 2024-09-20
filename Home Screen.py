@@ -12,16 +12,6 @@ def register():
     title = CTkLabel(master=mainMenu, text = "MENU", font = ("Coolvetica", 30), text_color="#FFFF00")
     title.place(relx = 0.5, rely =0.05, anchor = "center")
 
-
-
-
-
-
-
-
-
-
-
 #Decoration
 title = CTkLabel(master=home, text = "PlateFlow", font = ("Coolvetica", 30), text_color="#FFFF00")
 title.place(relx = 0.5, rely =0.12, anchor = "center")
