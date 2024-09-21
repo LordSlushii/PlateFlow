@@ -4,7 +4,7 @@ PlateFlow is a drive-thru solution that uses license plate recognition to identi
 
 Description of each file uploaded:
 
-Employeeinterface.py : A GUI made using python in which the drive thru employees scan the number plate or manually take a drive thru order
+Employeeinterface.py : A GUI made using python in which the drive thru can scan the number plate or manually take a drive thru order
 
 last recomendation module god pls save me.py : A module in which the user gets recomended new items or dishes based on his order history 
 
