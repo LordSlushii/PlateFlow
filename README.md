@@ -4,19 +4,19 @@ PlateFlow is a drive-thru solution that uses license plate recognition to identi
 
 Description of each file uploaded:
 
-Employeeinterface.py : A GUI made using python in which the drive thru can scan the number plate or manually take a drive thru order
+**Employeeinterface.py :** A GUI made using python in which the drive thru can scan the number plate or manually take a drive thru order
 
-last recomendation module god pls save me.py : A module in which the user gets recomended new items or dishes based on his order history (sorry for the name 😭🙏)
+**last recomendation module god pls save me.py :** A module in which the user gets recomended new items or dishes based on his order history (sorry for the name 😭🙏)
 
-CSVCODE.py : A python code using which we initialize csv files and add or retreive data. We're using CSV as our database
+**CSVCODE.py :** A python code using which we initialize csv files and add or retreive data. We're using CSV as our database
 
-Home Screen.py : A  temporary GUI for the users using the app to either order or get notified about their orders
+**Home Screen.py :** A  temporary GUI for the users using the app to either order or get notified about their orders
 
-dikpik.py : A code which uses diffrent modules liek opencv and pytesseract to scan the numberplate and obtain it as a string 
+**dikpik.py :** A code which uses diffrent modules liek opencv and pytesseract to scan the numberplate and obtain it as a string. **sorry not sorry ;)**
 
-FinalNPR.py : A combination of most of the files mentioned above used to make a software to create a seamless drive through experience 
+**FinalNPR.py :** A combination of most of the files mentioned above used to make a software to create a seamless drive through experience 
 
-orders.csv : CSV file in which the data is being held in 
+**orders.csv :** CSV file in which the data is being held in 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
