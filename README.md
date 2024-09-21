@@ -1,5 +1,5 @@
 # PlateFlow
-PlateFlow is a drive-thru solution that uses license plate recognition to identify vehicles and retrieve customer order history. Users can order. The system also leverages machine learning to provide personalized order recommendations based on past purchases, enhancing speed and personalization for a seamless drive-thru experience.
+PlateFlow is a drive-thru solution that uses license plate recognition to identify vehicles and retrieve customer order history. Users can order. The system also through machine earning and ai leverages  to provide personalized order recommendations based on past purchases, enhancing speed and personalization for a seamless and efficient drive-thru experience.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Description of each file uploaded:
@@ -22,4 +22,4 @@ orders.csv : CSV file in which the data is being held in
 
 
 
-Contributors : Navaneeth Krishna (LordSlushii), SreeHari Krishnan (Sreehair), Krishiv Rajkumar (Lord Flyaway)
+Contributors : Navaneeth Krishna (LordSlushii), SreeHari Krishnan (Sreehair), Krishiv Rajkumar (Lord Flyaway),Naman Sharma(Namanshar6)
