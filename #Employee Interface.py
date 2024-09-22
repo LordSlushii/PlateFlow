@@ -1,6 +1,6 @@
 #Employee Interface
 from customtkinter import *
-
+import csv
 
 home = ""
 def openHome():
@@ -74,8 +74,70 @@ def openHome():
         register.mainloop()
     register = CTkButton(master=home, text= "Register", font=("Bebas", 15), fg_color="#FF6B00", text_color="#000000", height = 50, width = 130 , command = reg)
     register.place(relx = 0.32, rely = 0.55, anchor = "center")
+    
+    def orderHistory():
+        home.withdraw()
+        historyWindow = CTk()
+        historyWindow.geometry("300x400")
+        orderFile = open("/Users/navaneethkrishna/Desktop/DevJams\'24/orders.csv", 'r')
+        readFile = csv.reader(orderFile)
+        lis = []
+        for i in readFile:
+            lis.append(i)
 
-    history=  CTkButton(master=home, text= "History", font=("Bebas", 15), fg_color="#FF6B00", text_color="#000000", height = 50, width = 130)
+        heading = CTkLabel(master = historyWindow, text= "Order History", font = ("Coolvetica", 30), text_color="#FF6B00")
+        heading.place(relx = 0.5, rely = 0.08, anchor = "center")
+
+        c1 = CTkLabel(master = historyWindow, text = lis[-1][0], font = ("Coolvetica", 20), text_color="#FFFFFF")
+        c1.place(relx = 0.5, rely = 0.2, anchor = "center")
+        t1 = lis[-1][1].replace("[", "")
+        t1 = t1.replace("]", "")
+
+        def o1green():
+             o1 = CTkButton(master = historyWindow, text = t1, font = ("Coolvetica", 20), text_color="#FFFFFF", height=50, width=250, fg_color= "green")
+             o1.place(relx = 0.5, rely = 0.3, anchor = "center")
+
+        o1 = CTkButton(master = historyWindow, text = t1, font = ("Coolvetica", 20), text_color="#FFFFFF", height=50, width=250, command= o1green)
+        o1.place(relx = 0.5, rely = 0.3, anchor = "center")
+
+        c2 = CTkLabel(master = historyWindow, text = lis[-2][0], font = ("Coolvetica", 20), text_color="#FFFFFF")
+        c2.place(relx = 0.5, rely = 0.45, anchor = "center")
+        t2 = lis[-2][1].replace("[", "")
+        t2 = t2.replace("]", "")
+
+        def o2green():
+             o2 = CTkButton(master = historyWindow, text = t2, font = ("Coolvetica", 20), text_color="#FFFFFF", height=50, width=250, fg_color= "green")
+             o2.place(relx = 0.5, rely = 0.55, anchor = "center")
+
+        o2 = CTkButton(master = historyWindow, text = t2, font = ("Coolvetica", 20), text_color="#FFFFFF", height=50, width=250, command = o2green)
+        o2.place(relx = 0.5, rely = 0.55, anchor = "center")
+
+        c3 = CTkLabel(master = historyWindow, text = lis[-3][0], font = ("Coolvetica", 20), text_color="#FFFFFF")
+        c3.place(relx = 0.5, rely = 0.70, anchor = "center")
+        t3 = lis[-3][1].replace("[", "")
+        t3 = t3.replace("]", "")
+
+        def o3green():
+            o3 = CTkButton(master = historyWindow, text = t3, font = ("Coolvetica", 20), text_color="#FFFFFF", height=50, width=250, fg_color='green')
+            o3.place(relx = 0.5, rely = 0.80, anchor = "center")
+        o3 = CTkButton(master = historyWindow, text = t3, font = ("Coolvetica", 20), text_color="#FFFFFF", height=50, width=250, command=o3green)
+        o3.place(relx = 0.5, rely = 0.80, anchor = "center")
+
+        def ref():
+            historyWindow.destroy()
+            orderHistory()
+        
+        refresh = CTkButton(master = historyWindow, text = "Refresh", font = ("Coolvetica", 20), text_color="#FFFFFF", height=20, width=130, command=ref)
+        refresh.place(relx= 0.275, rely= 0.92, anchor = 'center')
+
+        def backk():
+            historyWindow.withdraw()
+            openHome()
+
+        back = CTkButton(master = historyWindow, text = "Go Back", font = ("Coolvetica", 20), text_color="#FFFFFF", height=20, width=130, command=backk)
+        back.place(relx= 0.725, rely= 0.92, anchor = 'center')
+
+    history=  CTkButton(master=home, text= "History", font=("Bebas", 15), fg_color="#FF6B00", text_color="#000000", height = 50, width = 130, command= orderHistory)
     history.place(relx = 0.68, rely = 0.55, anchor = "center")
 
     def close():
@@ -86,6 +148,6 @@ def openHome():
 
     home.mainloop()
 
-
+    
 
 openHome()
