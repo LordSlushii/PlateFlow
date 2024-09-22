@@ -9,7 +9,16 @@ from datetime import date
 from datetime import datetime
 from datetime import time
 name = ""
-##The scanning of numberplate 
+##The scanning of numberplate
+
+import re
+
+def validate_number_plate(name):
+    pattern = r"^[A-Z]{2}.*[0-9]{4}$"
+    if re.match(pattern, name):
+        return True
+    else:
+        return False
 char_valid = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890"
 L_ST = ['TN','KL','SK','TS','TR','DL','KA','AP','AR','MH','GA','MP','UP','GJ','RJ','HR','PB','JK','JH','WB','AS','CG','HP','ML','MN','MZ','OD','BR','NL']
 str_st = "TKSDAMGRGCHOB"
@@ -45,16 +54,29 @@ def NPR(img_name):
 
     for i in range(len(final_text)):
         if final_text[i] in str_st:
-            if final_text[i]+final_text[i+1]:
-                for j in range(i,len(final_text)):
-                    name = name + final_text[j]
-                break
+            try:
+                if final_text[i]+final_text[i+1]:
+                    for j in range(i,len(final_text)):
+                        name = name + final_text[j]
+                        
+                    break
+                print(name)
+            except IndexError :
                 
+                continue 
+
+
+    if validate_number_plate(name) == True :
+        return name
+    elif validate_number_plate(name) == False :
+        plate_no = input("Enter your number plate :")
+        name = plate_no
+        return final_text 
                 
             
             
     temp_str =""
-    
+
         
             
     
@@ -76,6 +98,7 @@ def dikpik():
         if k%256 == 27:
             break
         elif k%256 == 32:
+            
             img_name = "opencv_frame_{}.png".format(img_counter)
             cv2.imwrite(img_name,frame)
             img_counter += 1
@@ -107,7 +130,7 @@ def update_order(final_text, current_order_L):
     csv_file = 'orders.csv'
     with open(csv_file,"w",newline='') as file :
         np_write = csv.writer(file)
-        np_write.writerow([final_text,current_order_L,cr_date,cr_time])
+        np_write.writerow([name,current_order_L,cr_date,cr_time])
 def update_order_2():
     c =0 
     previous_order = []
@@ -216,7 +239,7 @@ while True :
         for i in range(no_items):
             current_order = input("Enter your items :")
             current_order_L.append(current_order)
-        update_order(final_text,current_order_L)
+        update_order(name,current_order_L)
     if ch_1 == 2:
         read_orders()
     if ch_1 == 3:
